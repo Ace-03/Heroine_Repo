@@ -9,6 +9,7 @@ namespace Chapter.State {
         public bool isDucking;
         public bool isGrowing;
 
+        public GameObject particleEffect;
 
         public Vector3 lastMouseCoordinate = Vector3.zero;
         public Vector3 mouseDelta = Vector3.zero;
@@ -17,7 +18,7 @@ namespace Chapter.State {
         public float CurrentSpeed { get; set; }
         
         private IToyState 
-            _jumpState, _duckState, _diveState, _spinState, _burnState, _growState;
+            _jumpState, _duckState, _diveState, _spinState, _explodeState, _growState;
         
         private ToyStateContext _toyStateContext;
 
@@ -33,8 +34,8 @@ namespace Chapter.State {
                 gameObject.AddComponent<ToyDivingState>();
             _spinState =
                 gameObject.AddComponent<ToySpiningState>();
-            _burnState = 
-                gameObject.AddComponent<ToyBurningState>();
+            _explodeState = 
+                gameObject.AddComponent<ToyExplodingState>();
             _growState =
                 gameObject.AddComponent<ToyGrowingState>();
         }
@@ -55,9 +56,9 @@ namespace Chapter.State {
             _toyStateContext.Transition(_spinState);
         }
 
-        public void Burn()
+        public void Explode()
         {
-            _toyStateContext.Transition(_burnState);
+            _toyStateContext.Transition(_explodeState);
         }
 
         public void Grow()

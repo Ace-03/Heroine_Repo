@@ -42,7 +42,6 @@ namespace Chapter.State
             }
 
             //Move to Spin State
-
             if (Input.GetMouseButton(0))
                 _toyController.mouseDelta = Input.mousePosition - _toyController.lastMouseCoordinate;
             
@@ -54,9 +53,12 @@ namespace Chapter.State
             if (Input.GetMouseButtonUp(0))
                 _toyController.mouseDelta = Vector3.zero;
 
-            //Move to Burn State
-            if (Input.GetKey(KeyCode.Q))
-                _toyController.Burn();
+            //Move to Explode State
+            if (Input.GetKey(KeyCode.Q) && _toyController.isGrounded)
+            {
+                _toyController.isGrounded = false;
+                _toyController.Explode();
+            }
 
             //Move to Growing State
             if (Input.GetKey(KeyCode.W) && _toyController.isGrounded)
