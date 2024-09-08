@@ -8,6 +8,7 @@ namespace Chapter.State {
         public bool isGrounded = true;
         public bool isDucking;
         public bool isGrowing;
+        public bool isJumping;
 
         public GameObject particleEffect;
 

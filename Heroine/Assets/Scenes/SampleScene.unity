@@ -256,7 +256,7 @@ MonoBehaviour:
     Dive: S (Airborn)
 
     Explode:
-    Q
+    Q (Ducking)
 
     Spin: Left Mouse & Pull Down'
   m_isRightToLeft: 0

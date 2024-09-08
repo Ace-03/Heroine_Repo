@@ -12,6 +12,8 @@ namespace Chapter.State
             if (!_toyController)
                 _toyController = toyController;
 
+            Debug.Log("Jump is in control" + _toyController);
+
             _toyController.rb.velocity = Vector3.up * _toyController.jumpHeight;
         }
 
@@ -19,9 +21,10 @@ namespace Chapter.State
         {
             if (collision.gameObject.CompareTag("Ground") && _toyController)
             {
-                Debug.Log("Hit Gtounds");
+                //Debug.Log("Hit Gtounds");
                 _toyController.transform.Rotate(0, 0, 0);
                 _toyController.isGrounded = true;
+                _toyController.isJumping = false;
             }
         }
     }

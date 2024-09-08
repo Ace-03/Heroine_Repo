@@ -12,15 +12,16 @@ namespace Chapter.State
             if (!_toyController)
                 _toyController = toyController;
 
-            
+            Debug.Log("Duck is in control" + _toyController);
+
             if (_toyController.isDucking)
             {
-                Debug.Log("In Duck State");
+                //Debug.Log("In Duck State");
                 _toyController.transform.localScale = new Vector3(1, 0.5f, 1);
             }
             else
             {
-                Debug.Log("Get Bigger");
+                //Debug.Log("Get Bigger");
                 _toyController.transform.localScale = new Vector3(1, 1, 1);
             }
         }

@@ -11,7 +11,9 @@ namespace Chapter.State
             if (!_toyController)
                 _toyController = toyController;
 
-            Debug.Log("SPINING!!!!");
+            Debug.Log("Explode is in control" + _toyController);
+
+            //Debug.Log("SPINING!!!!");
 
             _toyController.transform.Rotate(45, 10 * Time.deltaTime, 45);
         }

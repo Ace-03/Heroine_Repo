@@ -20,6 +20,8 @@ namespace Chapter.State
             if (!_toyController)
                 _toyController = toyController;
 
+            Debug.Log("Explode is in control" + _toyController);
+
             _particleSystem.Play();
             _toyController.rb.velocity = Vector3.up * _toyController.jumpHeight * 0.5f;
             
@@ -28,7 +30,7 @@ namespace Chapter.State
         {
             if (collision.gameObject.CompareTag("Ground") && _toyController)
             {
-                Debug.Log("Hit Gtounds");
+                //Debug.Log("Hit Gtounds");
                 _toyController.transform.Rotate(0, 0, 0);
                 _toyController.isGrounded = true;
             }
