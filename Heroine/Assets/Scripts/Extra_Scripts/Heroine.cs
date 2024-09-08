@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class Heroine : MonoBehaviour
 {
-    void Heroine::handleInput(Input input)
-    {
-
-    }  
+    
 }
