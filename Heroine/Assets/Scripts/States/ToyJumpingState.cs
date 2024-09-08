@@ -20,6 +20,7 @@ namespace Chapter.State
             if (collision.gameObject.CompareTag("Ground") && _toyController)
             {
                 Debug.Log("Hit Gtounds");
+                _toyController.transform.Rotate(0, 0, 0);
                 _toyController.isGrounded = true;
             }
         }

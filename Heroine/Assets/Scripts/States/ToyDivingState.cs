@@ -21,8 +21,8 @@ namespace Chapter.State
             if (collision.gameObject.CompareTag("Ground") && _toyController)
             {
                 Debug.Log("Hit Gtounds From Dive");
-                _toyController.transform.localScale = new Vector3(1f, 1f, 1f);
-                
+                _toyController.transform.localScale = new Vector3(0f, 0f, 0f);
+                _toyController.transform.Rotate(0, 0, 0);
             }
         }
     }
